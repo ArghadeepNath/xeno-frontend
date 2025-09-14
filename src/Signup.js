@@ -27,7 +27,7 @@ export default function Signup({ switchToLogin }) {
     }
 
     try {
-      const res = await fetch("http://localhost:3000/signup", {
+      const res = await fetch("https://xeno-backend-7jfm.onrender.com/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
