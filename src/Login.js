@@ -12,7 +12,7 @@ export default function Login({ onLoginSuccess, switchToSignup }) {
     setError("");
 
     try {
-      const res = await fetch("http://localhost:3000/login", {
+      const res = await fetch("https://xeno-backend-7jfm.onrender.com/login", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, password }),
