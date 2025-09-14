@@ -34,7 +34,7 @@ export default function TenantForm({ onTenantCreated }) {
         return;
       }
 
-      const res = await fetch("http://localhost:3000/tenants", {
+      const res = await fetch("https://xeno-backend-7jfm.onrender.com/tenants", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
