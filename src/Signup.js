@@ -76,12 +76,8 @@ export default function Signup({ switchToLogin }) {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
             </svg>
           </div>
-          <h2 className="mt-6 text-3xl font-bold text-gray-900">
-            Create your account
-          </h2>
-          <p className="mt-2 text-sm text-gray-600">
-            Join Xeno Analytics to start tracking your Shopify stores
-          </p>
+          <h2 className="mt-6 text-3xl font-bold text-gray-900">Create your account</h2>
+          <p className="mt-2 text-sm text-gray-600">Join Xeno Analytics to start tracking your Shopify stores</p>
         </div>
 
         {/* Signup Form */}
@@ -100,9 +96,7 @@ export default function Signup({ switchToLogin }) {
               )}
 
               <div className="form-group">
-                <label htmlFor="email" className="form-label">
-                  Email address
-                </label>
+                <label htmlFor="email" className="form-label">Email address</label>
                 <input
                   id="email"
                   name="email"
@@ -117,9 +111,7 @@ export default function Signup({ switchToLogin }) {
               </div>
 
               <div className="form-group">
-                <label htmlFor="password" className="form-label">
-                  Password
-                </label>
+                <label htmlFor="password" className="form-label">Password</label>
                 <input
                   id="password"
                   name="password"
@@ -134,9 +126,7 @@ export default function Signup({ switchToLogin }) {
               </div>
 
               <div className="form-group">
-                <label htmlFor="confirmPassword" className="form-label">
-                  Confirm Password
-                </label>
+                <label htmlFor="confirmPassword" className="form-label">Confirm Password</label>
                 <input
                   id="confirmPassword"
                   name="confirmPassword"
@@ -150,11 +140,12 @@ export default function Signup({ switchToLogin }) {
                 />
               </div>
 
+              {/* Normal-sized Button */}
               <div>
                 <button
                   type="submit"
                   disabled={loading}
-                  className="btn btn-primary btn-lg w-full"
+                  className="btn btn-primary w-full py-2 text-sm font-medium flex items-center justify-center gap-2"
                 >
                   {loading ? (
                     <>
@@ -162,12 +153,22 @@ export default function Signup({ switchToLogin }) {
                       Creating account...
                     </>
                   ) : (
-                  <>
-                    <svg className="icon-sm" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z" />
-                    </svg>
-                    Create account
-                  </>
+                    <>
+                      <svg
+                        className="w-4 h-4"
+                        fill="none"
+                        stroke="currentColor"
+                        viewBox="0 0 24 24"
+                      >
+                        <path
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          strokeWidth={2}
+                          d="M18 9v3m0 0v3m0-3h3m-3 0h-3m-2-5a4 4 0 11-8 0 4 4 0 018 0zM3 20a6 6 0 0112 0v1H3v-1z"
+                        />
+                      </svg>
+                      Create account
+                    </>
                   )}
                 </button>
               </div>
