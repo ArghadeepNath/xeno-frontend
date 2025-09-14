@@ -17,7 +17,7 @@ function App() {
 
     const fetchStores = async () => {
       try {
-        const res = await fetch("http://localhost:3000/stores", {
+        const res = await fetch("https://xeno-backend-7jfm.onrender.com/stores", {
           headers: { Authorization: `Bearer ${token}` },
         });
         const data = await res.json();
