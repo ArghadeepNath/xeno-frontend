@@ -113,7 +113,7 @@ export default function Dashboard({ token, onLogout }) {
   useEffect(() => {
     if (!token) return;
 
-    fetch("http://localhost:3000/me", {
+    fetch("https://xeno-backend-7jfm.onrender.com/me", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -140,7 +140,7 @@ export default function Dashboard({ token, onLogout }) {
   useEffect(() => {
     if (!token) return;
 
-    fetch("http://localhost:3000/stores", {
+    fetch("https://xeno-backend-7jfm.onrender.com/stores", {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -157,7 +157,7 @@ export default function Dashboard({ token, onLogout }) {
   useEffect(() => {
     if (!selectedStore || !token) return;
 
-    fetch(`http://localhost:3000/stats/${selectedStore.id}`, {
+    fetch(`https://xeno-backend-7jfm.onrender.com/stats/${selectedStore.id}`, {
       headers: { Authorization: `Bearer ${token}` },
     })
       .then((res) => res.json())
@@ -176,7 +176,7 @@ export default function Dashboard({ token, onLogout }) {
     setSyncMessage("");
     
     try {
-      const response = await fetch(`http://localhost:3000/sync/${selectedStore.id}`, {
+      const response = await fetch(`https://xeno-backend-7jfm.onrender.com/sync/${selectedStore.id}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
       
@@ -185,7 +185,7 @@ export default function Dashboard({ token, onLogout }) {
       if (response.ok) {
         setSyncMessage(`✅ ${data.message}`);
         // Refresh stats after successful sync
-        const statsResponse = await fetch(`http://localhost:3000/stats/${selectedStore.id}`, {
+        const statsResponse = await fetch(`https://xeno-backend-7jfm.onrender.com/stats/${selectedStore.id}`, {
           headers: { Authorization: `Bearer ${token}` },
         });
         const statsData = await statsResponse.json();
@@ -216,7 +216,7 @@ export default function Dashboard({ token, onLogout }) {
     const fetchRevenueData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/stats/${selectedStore.id}/revenue?startDate=${dateRange.from}&endDate=${dateRange.to}`,
+          `https://xeno-backend-7jfm.onrender.com/stats/${selectedStore.id}/revenue?startDate=${dateRange.from}&endDate=${dateRange.to}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         const data = await response.json();
@@ -262,7 +262,7 @@ export default function Dashboard({ token, onLogout }) {
     const fetchOrdersData = async () => {
       try {
         const response = await fetch(
-          `http://localhost:3000/stats/${selectedStore.id}/orders?startDate=${ordersDateRange.from}&endDate=${ordersDateRange.to}`,
+          `https://xeno-backend-7jfm.onrender.com/stats/${selectedStore.id}/orders?startDate=${ordersDateRange.from}&endDate=${ordersDateRange.to}`,
           { headers: { Authorization: `Bearer ${token}` } }
         );
         const data = await response.json();
